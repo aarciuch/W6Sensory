@@ -11,7 +11,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_margin="4dp"
+        android:background="@color/kolor_tla"
         tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/sensoryNapis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dostepne_sensory"
+            style="@style/styl1"/>
+
+        <Button
+            android:id="@+id/zaladowanieSensorowButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/zaladowanie_sensorow"/>
+
+        <Button
+            android:id="@+id/czysczenieListySensorowButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/czyszczenie_listy_sensorow"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/listaSensorow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/styl1"
+                android:text="wiersz"/>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/swiatloTekst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/styl1"
+            android:text="wiersz"/>
+
+        <TextView
+            android:id="@+id/zblizenieTekst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/styl1"
+            android:text="wiersz"/>
+
+        <TextView
+            android:id="@+id/akcelerometrTekst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/styl1"
+            android:text="wiersz"/>
+
+
+
 
     </LinearLayout>
 </layout>

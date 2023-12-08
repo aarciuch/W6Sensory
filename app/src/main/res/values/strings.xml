@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">W6Sensory</string>
+    <string name="light_string">czujnik światła = %1$.5f</string>
+    <string name="proximity_string">czujnik zbliżeniowy = %1$.5f</string>
+    <string name="accelerometer_string">kcelerometr, X = %1$.5f, Y = %2$.5f, Z = %3$.5.f</string>
+    <string name="dostepne_sensory">Dostępne sensory:</string>
+    <string name="czyszczenie_listy_sensorow">Czyszczenie listy sensorów</string>
+    <string name="zaladowanie_sensorow">Załadowanie sensorów</string>
+    <string name="napis_pusta_lista">Lista sensorów - \nprzycisk Załadowanie sensorów</string>
 </resources>

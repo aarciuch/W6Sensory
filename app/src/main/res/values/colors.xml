@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="kolor_tla">#70EBEB</color>
+    <color name="kolor_tla_kontrolki">#C6EBC3</color>
 </resources>
