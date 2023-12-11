@@ -16,21 +16,33 @@ class Sensory (private val context:Context) {
     public val sensorManager : SensorManager
         get() = _sensorManager
 
+
+    private var _proximitySensor: Sensor
+    private var _lightSensor: Sensor
+    private var _acc : Sensor
+
     /**
      * @brief konstruktor
      */
     init {
         _sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        _proximitySensor = _sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY) as Sensor
+        _lightSensor = _sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT) as Sensor
+        _acc = _sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) as Sensor
     }
 
     /**
      * @brief zwaraca liste sensorów określonego typu
      */
     public fun listaSensorow(typ : Int) : List<Sensor> {
-        when (typ) {
-            Sensor.TYPE_ALL -> return _sensorManager.getSensorList(Sensor.TYPE_ALL)
-            else -> return  _sensorManager.getSensorList(Sensor.TYPE_ALL)
-        }
+            return _sensorManager.getSensorList(typ)
     }
 
+    public fun rejestrowanie(typ: Int) {
+
+    }
+
+    public fun wyrejestrowanie()  {
+        //mSensorManager.unregisterListener(this);
+    }
 }

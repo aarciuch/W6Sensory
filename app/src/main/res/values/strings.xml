@@ -8,4 +8,8 @@
     <string name="zaladowanie_sensorow">Załadowanie sensorów</string>
     <string name="napis_pusta_lista">Lista sensorów - \nprzycisk Załadowanie sensorów</string>
     <string name="pusta_linia">""</string>
+    <string name="type_all">ALL</string>
+    <string name="type_zblizeniowe">PROXI</string>
+    <string name="type_swiatlo">LIGHT</string>
+    <string name="type_acc">ACC</string>
 </resources>

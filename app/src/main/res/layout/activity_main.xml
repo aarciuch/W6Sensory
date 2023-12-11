@@ -36,6 +36,50 @@
             android:text="@string/dostepne_sensory"
             style="@style/styl1"/>
 
+        <RadioGroup
+            android:id="@+id/typyRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/allRB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/type_all"
+                android:layout_marginLeft="2dp"
+                android:background="@color/kolor_tla_kontrolki"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/proximityRB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/type_zblizeniowe"
+                android:layout_marginLeft="2dp"
+                android:background="@color/kolor_tla_kontrolki"/>
+
+            <RadioButton
+                android:id="@+id/lightRB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/type_swiatlo"
+                android:layout_marginLeft="2dp"
+                android:background="@color/kolor_tla_kontrolki"/>
+
+            <RadioButton
+                android:id="@+id/accRB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/type_acc"
+                android:layout_marginLeft="2dp"
+                android:background="@color/kolor_tla_kontrolki"/>
+
+        </RadioGroup>
 
         <ScrollView
             android:layout_width="match_parent"
