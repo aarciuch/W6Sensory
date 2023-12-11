@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="sensory"
+            type="tm.lab.w6sensory.Sensory" />
     </data>
 
     <LinearLayout
@@ -99,21 +101,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/styl1"
-            android:text="@string/pusta_linia"/>
+            android:text="@{String.format(@string/light_string, sensory.lightWartosc)}"/>
 
         <TextView
             android:id="@+id/zblizenieTekst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/styl1"
-            android:text="@string/pusta_linia"/>
+            android:text="@{String.format(@string/proximity_string, sensory.proximityWartosc)}"/>
 
         <TextView
             android:id="@+id/akcelerometrTekst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/styl1"
-            android:text="@string/pusta_linia"/>
+            android:text="@{String.format(@string/acc_string, sensory.accWartosc[0], sensory.accWartosc[1], sensory.accWartosc[2])}"/>
 
 
 
