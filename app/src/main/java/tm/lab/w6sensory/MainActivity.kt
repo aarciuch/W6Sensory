@@ -1,7 +1,6 @@
 package tm.lab.w6sensory
 
 import android.hardware.Sensor
-import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,12 +20,12 @@ class MainActivity : AppCompatActivity()  {
         inicjacja()
 
         binding.typyRG.setOnCheckedChangeListener { radioGroup, i ->
-            when(i) {
-                R.id.allRB -> tryb = Sensor.TYPE_ALL
-                R.id.proximityRB -> tryb = Sensor.TYPE_PROXIMITY
-                R.id.lightRB -> tryb = Sensor.TYPE_LIGHT
-                R.id.accRB -> tryb = Sensor.TYPE_ACCELEROMETER
-                else ->  tryb = Sensor.TYPE_ALL
+            tryb = when(i) {
+                R.id.allRB -> Sensor.TYPE_ALL
+                R.id.proximityRB -> Sensor.TYPE_PROXIMITY
+                R.id.lightRB -> Sensor.TYPE_LIGHT
+                R.id.accRB -> Sensor.TYPE_ACCELEROMETER
+                else -> Sensor.TYPE_ALL
             }
             zaladowanieListy(tryb)
         }
@@ -63,18 +62,12 @@ class MainActivity : AppCompatActivity()  {
 
     override fun onStart() {
         super.onStart()
-        if (sensory.proximitySensor != null) {
-            sensory.sensorManager.registerListener(sensory, sensory.proximitySensor,
-                SensorManager.SENSOR_DELAY_NORMAL)
-        }
-        if (sensory.lightSensor != null) {
-            sensory.sensorManager.registerListener(sensory, sensory.lightSensor,
-                SensorManager.SENSOR_DELAY_NORMAL)
-        }
-        if (sensory.acc != null) {
-            sensory.sensorManager.registerListener(sensory, sensory.acc,
-                SensorManager.SENSOR_DELAY_GAME)
-        }
+        sensory.sensorManager.registerListener(sensory, sensory.proximitySensor,
+            SensorManager.SENSOR_DELAY_NORMAL)
+        sensory.sensorManager.registerListener(sensory, sensory.lightSensor,
+            SensorManager.SENSOR_DELAY_NORMAL)
+        sensory.sensorManager.registerListener(sensory, sensory.acc,
+            SensorManager.SENSOR_DELAY_GAME)
     }
 
     override fun onStop() {
