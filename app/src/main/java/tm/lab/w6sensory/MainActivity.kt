@@ -10,7 +10,7 @@ import tm.lab.w6sensory.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private lateinit var sensorManager : SensorManager
+    private lateinit var sensory: Sensory
     private lateinit var listaSensorow : List<Sensor>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         inicjacja()
         binding.zaladowanieSensorowButton.setOnClickListener {
-            listaSensorow = sensorManager.getSensorList(Sensor.TYPE_ALL)
+            listaSensorow = sensory.listaSensorow(Sensor.TYPE_ALL)
             binding.listaSensorow.text = ""
             for (item: Sensor in listaSensorow) {
                 val a = "${binding.listaSensorow.text}${item.name}\n"
@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun inicjacja() {
+        sensory = Sensory(applicationContext)
         binding.listaSensorow.text = ""
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        binding.listaSensorow.text = getString(R.string.napis_pusta_lista)
+     //   getString(R.string.napis_pusta_lista).also { binding.listaSensorow.text = it }
+
     }
 }
